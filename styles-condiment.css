@@ -1,0 +1,369 @@
+body {
+    font-family: 'Encode Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3f3f3;
+}
+
+a {
+	text-decoration: none;
+    color: #2a6ea2;
+}
+
+.container {
+    display: flex;
+}
+
+/*MOBILE MENU 1*/
+input[data-function*="swipe"] {
+    position: absolute;
+    opacity: 0;
+}
+
+label[data-function*='swipe'] {
+    font: 28px/28px fontawesome;
+    position: absolute;
+    top: 1.05em;
+    left: .5em;
+    cursor: pointer;
+    transition: transform .3s;
+    transform: translate3d(0, 0, 0);
+    color: #fff;
+}
+
+input[data-function*="swipe"]:checked ~ label[data-function*="swipe"] {
+    transform: translate3d(260px, 0, 0);
+}
+
+input[data-function*='swipe']:checked ~ main {
+    transform: translate3d(260px, 0px, 0px);
+}
+
+input[data-function*='swipe']:checked ~ .sidebar-menu {
+    transform: translate3d(0px, 0px, 0px);
+}
+
+input[data-function*='swipe']:checked ~ .sidebar-menu .menu li {
+    width: 100%;
+}
+
+.sidebar-menu {
+    transform: translate3d(-260px, 0px, 0px);
+    position: absolute;
+    width: 16em;
+    background: #1d1d1d;
+    color: #eee;
+    height: 100vh;
+    transition: all .3s;
+    padding-top:1.5em;
+}
+
+.menu li {
+    padding: 0.5em;
+    list-style: none;
+    width: 0%;
+}
+
+.menu li.active a {
+    color: salmon;
+}
+
+.menu li a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    padding: 5px 0px 5px 0;
+    margin: 0 20px;
+}
+/*END MOBILE MENU 1*/
+
+header {
+    display: grid;
+    width: 100%;
+    min-height: 5em;
+    text-align: center;
+    background: #5d657d;
+    justify-content: center;
+    align-content: center;
+}
+
+h1, h2 {
+    font-family: 'Encode Sans', sans-serif;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* FOR UI MOCKUP */
+/*main {
+    display: grid;
+    padding: 2em 0;
+    background: rgb(243, 243, 243);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.2em;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-flow: row;
+}*/
+
+/* FOR UI REACT ANIMATION */
+main > div {
+    display: grid;
+    padding: 2em 0;
+    background: rgb(243, 243, 243);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.2em;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-flow: row;
+}
+
+.condiment-directory, .shoe-directory {
+/*    display: grid;
+    padding-top: 1.5em;*/
+    display: flex;
+    background: rgb(243, 243, 243);
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+#directory-filters .group {
+    display: inline-block;
+    margin-right: 2em;
+}
+
+#directory-filters label {
+    padding-right: .3em;
+}
+
+#directory-filters input[type=text],
+#directory-filters select {
+    font-size: 110%;
+    padding: .25em;
+    color: #5d657d;
+    border: 1px solid #5d657d;
+    background: #fff;
+}
+
+#directory-filters input[type=submit] {
+/*    font-family: 'robotolight', Arial, sans-serif;*/
+    font-size: 108%;
+    padding: .25em;
+}
+
+input[type='reset'] {
+    font-size: 1em;
+    padding: .5em 1em;
+    color: #fff;
+    border-radius: 5px;
+    background: #ffa502;
+}
+
+/* CSSTransition styles */
+.fade-enter {
+    opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 2000ms ease-in;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 2000ms ease-in;
+}
+
+article {
+    overflow: hidden;
+    width: 85%;
+    padding: 1em;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .5);
+/*    display: grid;*/
+}
+
+article > h2 {
+    font-size: 1.2em;
+    margin-top: 0;
+    color: #e65e33;
+    text-align: center;
+}
+
+article img{
+    display:block;
+    width:100%;  
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: .7em;
+    padding: 0;
+    list-style-type: none;
+}
+
+/*shoe-directory contact seller*/
+.contactSpace, .contactSpace1 {
+    padding: 0 0.8em;
+}
+
+.contactSpace1 {
+    padding-left: 7em;
+}
+
+.vertical-contactSpace {
+    padding-top: 0.5em;
+}
+
+@media only screen and (max-width: 1024px) {
+    main > div {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #directory-filters {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #directory-filters .group:last-of-type {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+/*    main > div {
+        grid-template-columns: repeat(3, 1fr);
+    }*/
+
+    /*condiments directory*/
+    .condiment-directory #directory-filters {
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /*shoes directory*/
+    .shoe-directory #directory-filters{
+        display: flex;
+        width: 69%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .shoe-directory .group {
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    .shoe-directory .group:nth-of-type(1) {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .shoe-directory select {
+        width: 100%;
+    }
+
+    #directory-filters .group {
+        margin-right: 0; 
+    }
+
+    #directory-filters .group:last-of-type {
+        text-align: center;
+    }
+
+    #directory-filters input[type=text], #directory-filters select {
+        margin-top: 0.3em;
+    }
+
+    input[type="reset"] {
+        margin-top: 2em;
+        padding: 0.5em 4em;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    main > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    * {
+      box-sizing: border-box;
+    }
+
+    header, .condiment-directory > p, .shoe-directory > p
+     /*#directory-filters*/ {
+        padding: 0 1em;
+    }
+
+    .group {
+        padding: 0.5em 0;
+    }
+
+    main > div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /*condiments directory*/
+    .condiment-directory #directory-filters {
+        text-align: left;
+    }
+
+    .condiment-directory input[type='reset'] {
+        margin-top: 1.5em;
+        padding: .5em 8em;
+    }
+
+    #directory-filters .group {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+
+    #directory-filters [type=text] {
+        width: 100%;
+    }
+
+    #directory-filters select {
+        width: 100%;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    /*shoe-directory contact seller*/
+    .contactSpace {
+        padding: 0 3em;
+    }
+}
+
+
+
+
+
+
+
+
+

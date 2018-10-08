@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Asian Condiments - On the Go Shopping</title>
+	    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Encode+Sans" rel="stylesheet">
+	    <link rel="stylesheet" type="text/css" href="styles-condiment.css">
+	    <link rel="stylesheet" type="text/css" href="animate.css">
+	   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  	</head>
+  	<body>
+  		<div class="container">
+<!--    			<header>
+  				<h1>Asian Condiments and Seasonings</h1>
+  			</header> -->
+
+			<input data-function="swipe" id="off-canvas" type="checkbox">
+			<label data-function="swipe" for="off-canvas">&#xf0c9;</label>
+
+  			<div class="sidebar-menu">
+			    <nav class="menu" class="fa fa-close">
+					<li class="active"><a href="#">Buy</a></li>
+					<li><a href="#">Sell</a></li>
+					<li><a href="#">Share</a></li>
+					<li><a href="#">About</a></li>
+			    </nav>
+			    <a class="backdrop" tabindex="-1" aria-hidden="true" hidden></a>
+		  	</div>
+
+		  	<div id="directory-root"></div>
+
+  		</div><!--Close container -->
+
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script>window.React || document.write('<script crossorigin src="../node_modules/react/umd/react.development.js"><\/script>')</script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+		<script>window.ReactDOM || document.write('<script crossorigin src="../node_modules/react-dom/umd/react-dom.development.js"><\/script>')</script>
+
+		<script crossorigin src="https://unpkg.com/react-transition-group@2.2/dist/react-transition-group.js"></script>
+	<!--	<script>window.ReactTransitionGroup || document.write('<script crossorigin src="../node_modules/react-transition-group/dist/react-transition-group.js"><\/script>')</script> -->
+
+		<script src="condiments-data.js" async></script>
+    	<script src="condiments-dist.js" async></script> 
+    	
+  	</body>
+</html>
